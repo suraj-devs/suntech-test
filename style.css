@@ -1,0 +1,90 @@
+:root{
+    --font-raleway: "Raleway", serif;
+    --color-yellow: 192 152 54;
+    --color-white: 255 255 255;
+    --color-black: 16 16 16;
+}
+
+.top-bar {
+    padding: 10px 0;
+    font-size: 14px;
+    z-index: 1;
+    position: relative;
+}
+.top-bar a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+}
+.top-bar .btn {
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 14px;
+    border: 1px solid rgb(var(--color-yellow));
+    color: rgb(var(--color-yellow));
+    background: transparent;
+}
+.top-bar .btn.fill-btn {
+    background-color: rgb(var(--color-yellow));
+    color: rgb(var(--color-white));
+}
+.top-bar .btn.fill-btn:hover {
+    background-color: transparent;
+    color: rgb(var(--color-yellow));
+}
+.top-bar .btn:hover {
+    background: rgb(var(--color-yellow));
+    color: rgb(var(--color-white));
+}
+.navbar {
+    padding: 15px 0;
+}
+.navbar-nav .nav-link {
+    color: rgb(var(--color-black));
+    font: 500 18px/21px var(--font-raleway);
+}
+.navbar-nav .nav-link:hover {
+    color: rgb(var(--color-yellow));
+}
+.dropdown-toggle {
+    background: rgb(var(--color-yellow));
+    color: rgb(var(--color-white));
+    border-radius: 20px;
+    padding: 8px 15px;
+    border: none;
+}
+/* mobile navigation  */
+.navbar-brand img {
+    height: 50px;
+    z-index: 1;
+    position: relative;
+    background: rgb(var(--color-white));
+    padding: 0 10px;
+}
+.navbar-brand.mx-auto {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: block;
+    text-align: center;
+    z-index: 0;
+    top: calc(100% / 2 - 60px);
+}
+.navbar-brand.mx-auto::after,
+.navbar-brand.mx-auto::before {
+    content: '';
+    height: 1px;
+    width: calc(100% / 2);
+    background-color: rgb(var(--color-black) / 10%);
+    position: absolute;
+    top: 50%;
+    left: calc(100% / 2 - 20px);
+    right: unset;
+}
+.navbar-brand.mx-auto::after{
+    right: calc(100% / 2 - 20px);
+    left: unset;
+}
+/* mobile navigation End */

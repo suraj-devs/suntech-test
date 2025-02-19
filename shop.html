@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Dynamic Height</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 600px;
+            height: 530px; /* Fixed total height */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 5px;
+            background: #ddd;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .box {
+            background-color: lightblue;
+            transition: flex-grow 0.3s ease, height 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        h3 {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 14px;
+            transition: opacity 0.3s ease;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h3>Box 1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        </div>
+        <div class="box">
+            <h3>Box 2</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quibusdam, aspernatur itaque perferendis facilis quia rerum nulla sapiente eaque officiis iusto eligendi quod.</p>
+        </div>
+        <div class="box">
+            <h3>Box 3</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, veniam.</p>
+        </div>
+        <div class="box">
+            <h3>Box 4</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quibusdam, aspernatur itaque perferendis facilis quia rerum nulla sapiente eaque officiis iusto eligendi quod. Provident enim, nulla voluptates explicabo molestiae vero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus veritatis iste ipsa nemo, repellendus fugiat in, maxime nostrum aliquid ea ab! Possimus, suscipit nam odit quisquam voluptate iste delectus nisi.</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll(".box").forEach((box, index) => {
+            box.setAttribute("data-key", index + 1); // 1 se shuru karne ke liye
+        });
+
+        const containerHeight = 530; // Fixed height
+        const boxes = document.querySelectorAll('.box');
+
+        let originalHeights = [];
+        function calculateOriginalHeights() {
+            let avgHeight = containerHeight / 2; // 2 rows
+            boxes.forEach(box => {
+                box.style.height = avgHeight + "px";
+                originalHeights.push(avgHeight);
+            });
+        }
+
+        calculateOriginalHeights(); 
+
+        // Hover Mapping for adjusting heights
+        const hoverMap = {
+            1: 2, 
+            2: 1, 
+            3: 4, 
+            4: 3  
+        };
+
+        boxes.forEach((box, index) => {
+            box.addEventListener("mouseenter", function() {
+                let key = parseInt(this.getAttribute("data-key"));
+                let targetKey = hoverMap[key]; 
+                let targetBox = document.querySelector(`.box[data-key="${targetKey}"]`);
+
+                // Content ka height check karo
+                let contentHeight = this.scrollHeight + 20; // Total required height for full content
+                let maxHeight = Math.min(contentHeight, containerHeight * 0.7); // Max 70% height le sakta hai
+
+                let newTargetHeight = containerHeight - maxHeight;
+
+                this.style.height = maxHeight + "px"; 
+                targetBox.style.height = newTargetHeight + "px";
+            });
+
+            box.addEventListener("mouseleave", function() {
+                boxes.forEach((b, i) => {
+                    b.style.height = originalHeights[i] + "px";
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
