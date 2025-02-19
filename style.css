@@ -107,7 +107,7 @@ body {
 /* About Us Section  */
 section.aboutus{
     background: rgb(var(--color-red));
-    padding: 4rem 0;
+    /* padding: 4rem 0; */
 }
 /* About Us Section End */
 @media (max-width: 991px) {
