@@ -5,23 +5,20 @@
     --color-black: 16 16 16;
     --color-red: 178 64 55;
 }
-
 body {
     font-family: var(--font-raleway);
 }
-
 /* 🔹 Top Bar */
 .top-bar {
     /* background: #f8f9fa; */
     font-size: 14px;
 }
-
-.top-bar a {
+.action-btn a, .top-bar a {
     text-decoration: none;
     color: #333;
     margin: 0 10px;
 }
-
+.action-btn .btn,
 .top-bar .btn {
     border-radius: 20px;
     padding: 5px 15px;
@@ -30,37 +27,47 @@ body {
     color: rgb(var(--color-yellow));
     background: transparent;
 }
-
 .top-bar .btn.fill-btn {
     background-color: rgb(var(--color-yellow));
     color: rgb(var(--color-white));
 }
 
+.action-btn .btn:hover,
 .top-bar .btn:hover {
     background-color: rgb(var(--color-yellow));
     color: rgb(var(--color-white));
 }
-
+.btn.btn-white {
+    background-color: transparent;
+    border-color: rgb(var(--color-white)) !important;
+    color: rgb(var(--color-white));
+}
 .top-bar i {
     color: rgb(var(--color-black));
     margin-left: 10px;
 }
-
+/* Section title */
+.section-title > span{
+    font: 600 17px/60px var(--font-raleway);
+    color: rgb(var(--color-red));
+}
+.section-title > h4{
+    font: 600 45px/60px var(--font-raleway);
+    color: rgb(var(--color-black));
+}
+/* Section title end */
 /* 🔹 Navbar */
 .navbar {
     padding: 15px 0;
 }
-
 .navbar-nav .nav-link {
     color: var(--color-black);
     font-weight: 500;
     font-size: 18px;
 }
-
 .navbar-nav .nav-link:hover {
     color: rgb(var(--color-yellow));
 }
-
 /* 🔹 Dropdown */
 .dropdown-toggle {
     background: rgb(var(--color-yellow));
@@ -72,12 +79,10 @@ body {
 .dropdown-toggle:hover{
     background: rgb(var(--color-yellow));
 }
-
 /* 🔹 Navbar Brand */
 .navbar-brand img {
     height: 50px;
 }
-
 .navbar-brand img {
     height: 50px;
     z-index: 1;
@@ -95,21 +100,102 @@ body {
     }
 }
 @media (max-width: 1199px) {
-.navbar-brand img {
-    height: 36px;
-}
-.navbar-nav .nav-link {
-    font-size: 14px;
-}
+    .navbar-brand img {
+        height: 36px;
+    }
+    .navbar-nav .nav-link {
+        font-size: 14px;
+    }
 }
 /* 🔹 Responsive Navbar */
 
 /* About Us Section  */
 section.aboutus{
     background: rgb(var(--color-red));
-    /* padding: 4rem 0; */
+}
+.aboutImage {
+    position: relative;
+    max-width: calc(600px - 5rem);
+    /* max-width: 100%; */
+    margin: auto;
+}
+.aboutImage > img {
+    z-index: 2;
+    position: relative;
+}
+.aboutImage .image-three, .aboutImage .image-two {
+    position: absolute;
+    height: 45% !important;
+    width: 40% !important;
+    object-fit: cover;
+    top: -5rem;
+    right: -5rem;
+    display: inline-block;
+    z-index: 3;
+}
+.aboutImage .image-three{
+    width: 35% !important;
+    height: 40% !important;
+    bottom: 5rem;
+    left: -10rem;
+    top: unset;
+    right: unset;
+}
+.image-one {
+    margin-bottom: -5rem;
+    z-index: 2;
+}
+.about-details {
+    margin-left: 2rem;
+    position: relative;
+    z-index: 1;
+}
+.aboutImage:before {
+    content: '';
+    position: absolute;
+    background: url('./media/bg_leaf.png');
+    background-size: 130%;
+    /* background-attachment: fixed; */
+    background-position: top right;
+    height: 100%;
+    width: 100%;
+    display: block;
+    top: -57%;
+    background-repeat: no-repeat;
+    right: -50%;
+    z-index: 0;
+    transform: scale(1);
+}
+.about-details > span {
+    position: relative;
+    margin-left: 25px;
+    font: 600 17px/60px var(--font-raleway);
+}
+.about-details > span::before {
+    content: '';
+    height: 3px;
+    width: 20px;
+    background: rgb(var(--color-white));
+    border-radius: 5px;
+    position: absolute;
+    right: calc(100% + 5px);
+    top: 50%;
+}
+.about-details > h3 {
+    font: 600 45px/60px var(--font-raleway);
+}
+.about-details > p {
+    font: 400 18px/32px var(--font-raleway);
+}
+.about-details > a {
+    line-height: 40px;
+    padding: 0 15px;
 }
 /* About Us Section End */
+/* testimonail section */
+.treatments-content > h4{font: 600 26px/60px var(--font-raleway);margin-bottom: 0;}
+.treatments-content > span{font: 500 18px/32px var(--font-raleway);}
+/* testimonail section End */
 @media (max-width: 991px) {
     .navbar-toggler {
         border: none;
@@ -140,5 +226,16 @@ section.aboutus{
     }
     .navbar-brand img {
         height: 32px;
+    }
+}
+@media (max-width: 767px){
+    .aboutImage:before{
+        display: none;
+    }
+    .image-one {margin-bottom: 2rem;}
+}
+@media (max-width: 576px){
+    .image-two, .image-three{
+        display: none !important;
     }
 }
