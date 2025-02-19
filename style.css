@@ -1,8 +1,9 @@
-:root {
-    --font-raleway: "Raleway", sans-serif;
-    --color-yellow: #C09836;
-    --color-white: #FFFFFF;
-    --color-black: #101010;
+:root{
+    --font-raleway: "Raleway", serif;
+    --color-yellow: 192 152 54;
+    --color-white: 255 255 255;
+    --color-black: 16 16 16;
+    --color-red: 178 64 55;
 }
 
 body {
@@ -25,23 +26,23 @@ body {
     border-radius: 20px;
     padding: 5px 15px;
     font-size: 14px;
-    border: 1px solid var(--color-yellow);
-    color: var(--color-yellow);
+    border: 1px solid rgb(var(--color-yellow));
+    color: rgb(var(--color-yellow));
     background: transparent;
 }
 
 .top-bar .btn.fill-btn {
-    background-color: var(--color-yellow);
-    color: var(--color-white);
+    background-color: rgb(var(--color-yellow));
+    color: rgb(var(--color-white));
 }
 
 .top-bar .btn:hover {
-    background-color: var(--color-yellow);
-    color: var(--color-white);
+    background-color: rgb(var(--color-yellow));
+    color: rgb(var(--color-white));
 }
 
 .top-bar i {
-    color: var(--color-black);
+    color: rgb(var(--color-black));
     margin-left: 10px;
 }
 
@@ -57,19 +58,19 @@ body {
 }
 
 .navbar-nav .nav-link:hover {
-    color: var(--color-yellow);
+    color: rgb(var(--color-yellow));
 }
 
 /* 🔹 Dropdown */
 .dropdown-toggle {
-    background: var(--color-yellow);
-    color: var(--color-white);
+    background: rgb(var(--color-yellow));
+    color: rgb(var(--color-white));
     border-radius: 20px;
     padding: 8px 15px;
     border: none;
 }
 .dropdown-toggle:hover{
-    background: var(--color-yellow);
+    background: rgb(var(--color-yellow));
 }
 
 /* 🔹 Navbar Brand */
@@ -81,7 +82,7 @@ body {
     height: 50px;
     z-index: 1;
     position: relative;
-    background:var(--color-white);
+    background:rgb(var(--color-white));
     padding: 0 10px;
 }
 .navbar-brand.mx-auto {
@@ -121,7 +122,7 @@ section.aboutus{
     }
 
     .navbar-collapse {
-        background-color: var(--color-white);
+        background-color: rgb(var(--color-white));
         padding: 10px;
         text-align: center;
     }
