@@ -4,56 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Providence Dental</title>
-    <!-- Font Sheets -->
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <!-- Font Sheets End-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="style.css" />
+    <!-- Icons & Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="style.css">
 </head> 
 <body>
-<div class="container-fluid top-bar text-center text-md-start border-bottom">
-    <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
+
+<!-- 🔹 Top Bar -->
+<div class="container-fluid top-bar text-center text-md-start border-bottom py-2">
+    <div class="d-flex justify-content-between align-items-center flex-wrap">
         <div>
-            <a href="#" aria-label="button" class="btn btn-sm fill-btn">Contact Us</a>
+            <a href="#" class="btn btn-sm fill-btn">Contact Us</a>
             <span>Follow us on:</span>
-            <a href="#" aria-label="Social media facebook"><img src="media/facebook.png" width="20" height="20" class="img-fluid" alt="Facebook"></a>
-            <a href="#" aria-label="Social media instagram"><img src="media/instagram.png" width="20" height="20" class="img-fluid" alt="Instagram"></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
-        <div class="d-none d-md-block">
-            <a href="mailto:info@providencedental.co.uk" aria-label="Email now"><img src="media/envelope.png" width="20" height="20" class="img-fluid" alt="Email"> info@providencedental.co.uk</a>
-            <a href="tel:+916023164946" aria-label="Phone call"><img src="media/call.png" width="20" height="20" class="img-fluid" alt="Phone"> 602-316-4946</a>
-            <a href="#" aria-label="button" class="btn btn-sm">Referrals</a>
+        <div class="d-none d-md-flex gap-3">
+            <a href="mailto:info@providencedental.co.uk"><i class="fas fa-envelope"></i> info@providencedental.co.uk</a>
+            <a href="tel:+916023164946"><i class="fas fa-phone"></i> 602-316-4946</a>
+            <a href="#" class="btn btn-sm">Referrals</a>
         </div>
     </div>
 </div>
+
+<!-- 🔹 Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
-        <!-- Left Menu -->
-        <div class="d-flex col-md-4">
+    <div class="container-fluid">
+        
+        <!-- 🔹 Brand Logo in Center -->
+        <a class="navbar-brand mx-auto d-lg-none" href="#">
+            <img src="media/logo.png" height="50" alt="Providence Dental Practice">
+        </a>
+
+        <!-- 🔹 Navbar Toggler (for Mobile) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Left Menu -->
             <ul class="navbar-nav me-auto d-none d-lg-flex">
                 <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Fees & Plans</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Invisalign</a></li>
             </ul>
-        </div>
 
-        <!-- Logo in Center -->
-        <div class="navbar-brand mx-auto">
-            <a href="#" class="d-inline-block" aria-label="Brand Logo">
-                <img src="media/logo.png" width="" height="" class="img-fluid" alt="Providence Dental Practice">
+            <!-- Logo in Center (Desktop) -->
+            <a class="navbar-brand d-none d-lg-block mx-auto" href="#">
+                <img src="media/logo.png" height="50" alt="Providence Dental Practice">
             </a>
-        </div>
 
-        <!-- Right Menu -->
-        <div class="d-flex col-md-4">
-            <ul class="navbar-nav ms-auto d-none d-lg-flex">
+            <!-- Right Menu -->
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#">Smile Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Blogs</a></li>
+
+                <!-- 🔹 Dropdown (Dental Treatment) -->
                 <li class="nav-item dropdown">
                     <button class="btn dropdown-toggle" data-bs-toggle="dropdown">
                         Dental Treatment
@@ -68,7 +83,8 @@
         </div>
     </div>
 </nav>
-<!-- CDNs -->
+
+<!-- 🔹 Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
