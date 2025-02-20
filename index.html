@@ -169,7 +169,7 @@
                     <a href="#" aria-label="button" class="btn btn-sm">View All Treatment</a>
                 </div>
             </div>
-            <div class="row row-cols-4 -bottom-3 pt-5">
+            <div class="row row-cols-md-4 row-cols-sm-2 pt-5">
                 <div class="col treatments-card">
                     <div class="treatments-figure">
                         <img src="media/testimonial-card-one.png" width="" height="" class="img-fluid w-100"
@@ -227,16 +227,49 @@
     </section>
     <!-- Testimonial Section End -->
     <!-- dr section -->
-    <section class="dr-section">
+    <section class="carousel-container">
         <div class="container">
-            <div class="row row-cols-6">
-                <div class="col"></div>
+            <div class="carouselInner">
+                <div class="doctor-images">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" data-bs-target="#dentistCarousel" data-bs-slide-to="0" class="active">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" data-bs-target="#dentistCarousel" data-bs-slide-to="1">
+                </div>
+                <div id="dentistCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#dentistCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#dentistCarousel" data-bs-slide-to="1"></button>
+                    </div>
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active">
+                            <div class="carousel-text">
+                                <h2>Dr. John Smith</h2>
+                                <p>Dr. John has 15 years of experience in dental surgery and specializes in cosmetic dentistry.</p>
+                                <button class="btn-read-more">Read More</button>
+                            </div>
+                            <div class="carousel-image">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg">
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <div class="carousel-text">
+                                <h2>Dr. Lisa Brown</h2>
+                                <p>Dr. Lisa is an expert in Invisalign and modern orthodontic treatments.</p>
+                                <button class="btn-read-more">Read More</button>
+                            </div>
+                            <div class="carousel-image">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     <!-- dr section End -->
-
-    <!-- 🔹 Scripts -->
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

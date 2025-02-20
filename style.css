@@ -4,6 +4,7 @@
     --color-white: 255 255 255;
     --color-black: 16 16 16;
     --color-red: 178 64 55;
+    --transition: 0.3s all ease-in-out;
 }
 body {
     font-family: var(--font-raleway);
@@ -94,6 +95,60 @@ body {
     position: relative;
     text-align: center;
 }
+
+/* Treatments */
+.treatments-figure:before, .treatments-figure:after {
+    content: '';
+    top: 0px;
+    left: 0px;
+    height: 100px;
+    width: 100px;
+    background-color: transparent;
+    position: absolute;
+    border-top: 0px solid rgb(var(--color-white));
+    border-left: 0px solid rgb(var(--color-white));
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: var(--transition);
+}
+
+.treatments-figure:after {
+    border-top: unset;
+    border-left: unset;
+    border-right: 0px solid rgb(var(--color-white));
+    border-bottom: 0px solid rgb(var(--color-white));
+    top: unset;
+    left: unset;
+    right: 0px;
+    bottom: 0px;
+}
+
+.treatments-figure {
+    position: relative;
+    transition: var(--transition);
+}
+.treatments-card:hover .treatments-figure:before {
+    top: 10px;
+    left: 10px;
+    border-top: 3px solid rgb(var(--color-white));
+    border-left: 3px solid rgb(var(--color-white));
+}
+.treatments-card:hover .treatments-figure:after {
+    right: 10px;
+    bottom: 10px;
+    border-right: 3px solid rgb(var(--color-white));
+    border-bottom: 3px solid rgb(var(--color-white));
+}
+.treatments-card:hover .treatments-figure {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 10px -5px rgb(var(--color-black) / 40%);
+    border-radius: 6px;
+}
+.treatments-card:hover a.btn {
+    background-color: rgb(var(--color-yellow));
+    color: rgb(var(--color-white));
+}
+/* Treatments end */
 @media (min-width: 992px) {
     .navbar-brand.mx-auto {
         top: -41px;
@@ -116,7 +171,6 @@ section.aboutus{
 .aboutImage {
     position: relative;
     max-width: calc(600px - 5rem);
-    /* max-width: 100%; */
     margin: auto;
 }
 .aboutImage > img {
@@ -193,9 +247,91 @@ section.aboutus{
 }
 /* About Us Section End */
 /* testimonail section */
-.treatments-content > h4{font: 600 26px/60px var(--font-raleway);margin-bottom: 0;}
-.treatments-content > span{font: 500 18px/32px var(--font-raleway);}
+.treatments-content > h4{font: 600 16px/normal var(--font-raleway);margin-bottom: 0;}
+.treatments-content > span{font: 500 14px/24px var(--font-raleway);}
 /* testimonail section End */
+/* Profile Section  */
+.carousel-container {
+    background: #a9473c;
+    color: white;
+    /* padding: 40px; */
+    /* border-radius: 10px; */
+    /* text-align: center; */
+    /* position: relative; */
+    /* max-width: 900px; */
+}
+
+.doctor-images {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.doctor-images img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: 0.3s;
+    margin: 0 10px;
+}
+
+.doctor-images img.active {
+    border: 3px solid white;
+    box-shadow: 0px 0px 10px white;
+}
+
+.carousel-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.carousel-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.carousel-text p {
+    font-size: 16px;
+}
+
+.carousel-image img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.btn-read-more {
+    background: none;
+    border: 1px solid white;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.btn-read-more:hover {
+    background: white;
+    color: #a9473c;
+}
+/* Profile Section  */
 @media (max-width: 991px) {
     .navbar-toggler {
         border: none;

@@ -2,121 +2,196 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hover Dynamic Height</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dentist Carousel</title>
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .carousel-container {
+            background: #a9473c;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            max-width: 900px;
+            margin: auto;
         }
 
-        .container {
-            width: 600px;
-            height: 530px; /* Fixed total height */
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 5px;
-            background: #ddd;
-            padding: 10px;
-            overflow: hidden;
-        }
-
-        .box {
-            background-color: lightblue;
-            transition: flex-grow 0.3s ease, height 0.3s ease;
+        .doctor-images {
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            padding: 10px;
-            overflow: hidden;
+            margin-bottom: 15px;
         }
 
-        h3 {
-            margin-bottom: 5px;
+        .doctor-images img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: 0.3s;
+            margin: 0 10px;
+        }
+
+        .doctor-images img.active {
+            border: 3px solid white;
+            box-shadow: 0px 0px 10px white;
+        }
+
+        .carousel-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .carousel-text h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .carousel-text p {
             font-size: 16px;
         }
 
-        p {
-            font-size: 14px;
-            transition: opacity 0.3s ease;
-            text-align: center;
+        .carousel-image img {
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .btn-read-more {
+            background: none;
+            border: 1px solid white;
+            padding: 8px 15px;
+            color: white;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-read-more:hover {
+            background: white;
+            color: #a9473c;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="box">
-            <h3>Box 1</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+<div class="carousel-container">
+    
+    <!-- Doctor Images (Clickable) -->
+    <div class="doctor-images">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" data-bs-target="#dentistCarousel" data-bs-slide-to="0" class="active">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" data-bs-target="#dentistCarousel" data-bs-slide-to="1">
+        <img src="https://randomuser.me/api/portraits/men/50.jpg" data-bs-target="#dentistCarousel" data-bs-slide-to="2">
+        <img src="https://randomuser.me/api/portraits/women/60.jpg" data-bs-target="#dentistCarousel" data-bs-slide-to="3">
+    </div>
+
+    <!-- Carousel -->
+    <div id="dentistCarousel" class="carousel slide" data-bs-ride="carousel">
+        
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#dentistCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#dentistCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#dentistCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#dentistCarousel" data-bs-slide-to="3"></button>
         </div>
-        <div class="box">
-            <h3>Box 2</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quibusdam, aspernatur itaque perferendis facilis quia rerum nulla sapiente eaque officiis iusto eligendi quod.</p>
-        </div>
-        <div class="box">
-            <h3>Box 3</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, veniam.</p>
-        </div>
-        <div class="box">
-            <h3>Box 4</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quibusdam, aspernatur itaque perferendis facilis quia rerum nulla sapiente eaque officiis iusto eligendi quod. Provident enim, nulla voluptates explicabo molestiae vero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus veritatis iste ipsa nemo, repellendus fugiat in, maxime nostrum aliquid ea ab! Possimus, suscipit nam odit quisquam voluptate iste delectus nisi.</p>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+            
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="carousel-text">
+                    <h2>Dr. John Smith</h2>
+                    <p>Dr. John has 15 years of experience in dental surgery and specializes in cosmetic dentistry.</p>
+                    <button class="btn-read-more">Read More</button>
+                </div>
+                <div class="carousel-image">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg">
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <h2>Dr. Lisa Brown</h2>
+                    <p>Dr. Lisa is an expert in Invisalign and modern orthodontic treatments.</p>
+                    <button class="btn-read-more">Read More</button>
+                </div>
+                <div class="carousel-image">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg">
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <h2>Dr. Mark Johnson</h2>
+                    <p>Dr. Mark has a passion for pediatric dentistry and creating comfortable experiences for kids.</p>
+                    <button class="btn-read-more">Read More</button>
+                </div>
+                <div class="carousel-image">
+                    <img src="https://randomuser.me/api/portraits/men/50.jpg">
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <h2>Dr. Emily Davis</h2>
+                    <p>Dr. Emily is known for her expertise in gum disease treatments and dental implants.</p>
+                    <button class="btn-read-more">Read More</button>
+                </div>
+                <div class="carousel-image">
+                    <img src="https://randomuser.me/api/portraits/women/60.jpg">
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <script>
-        document.querySelectorAll(".box").forEach((box, index) => {
-            box.setAttribute("data-key", index + 1); // 1 se shuru karne ke liye
+</div>
+
+<!-- Bootstrap Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Change active doctor image on click
+    document.querySelectorAll('.doctor-images img').forEach((img, index) => {
+        img.addEventListener('click', function () {
+            document.querySelectorAll('.doctor-images img').forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
         });
+    });
 
-        const containerHeight = 530; // Fixed height
-        const boxes = document.querySelectorAll('.box');
-
-        let originalHeights = [];
-        function calculateOriginalHeights() {
-            let avgHeight = containerHeight / 2; // 2 rows
-            boxes.forEach(box => {
-                box.style.height = avgHeight + "px";
-                originalHeights.push(avgHeight);
-            });
-        }
-
-        calculateOriginalHeights(); 
-
-        // Hover Mapping for adjusting heights
-        const hoverMap = {
-            1: 2, 
-            2: 1, 
-            3: 4, 
-            4: 3  
-        };
-
-        boxes.forEach((box, index) => {
-            box.addEventListener("mouseenter", function() {
-                let key = parseInt(this.getAttribute("data-key"));
-                let targetKey = hoverMap[key]; 
-                let targetBox = document.querySelector(`.box[data-key="${targetKey}"]`);
-
-                // Content ka height check karo
-                let contentHeight = this.scrollHeight + 20; // Total required height for full content
-                let maxHeight = Math.min(contentHeight, containerHeight * 0.7); // Max 70% height le sakta hai
-
-                let newTargetHeight = containerHeight - maxHeight;
-
-                this.style.height = maxHeight + "px"; 
-                targetBox.style.height = newTargetHeight + "px";
-            });
-
-            box.addEventListener("mouseleave", function() {
-                boxes.forEach((b, i) => {
-                    b.style.height = originalHeights[i] + "px";
-                });
-            });
+    // Update active doctor image when carousel slides
+    document.getElementById('dentistCarousel').addEventListener('slid.bs.carousel', function (e) {
+        let activeIndex = e.to;
+        document.querySelectorAll('.doctor-images img').forEach((img, index) => {
+            img.classList.toggle('active', index === activeIndex);
         });
-    </script>
+    });
+</script>
 
 </body>
 </html>
