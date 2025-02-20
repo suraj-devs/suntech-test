@@ -154,6 +154,7 @@ button:focus:not(:focus-visible) {
 /* About Us Section  */
 section.aboutus{
     background: rgb(var(--color-red));
+    overflow: hidden;
 }
 .aboutImage {
     position: relative;
