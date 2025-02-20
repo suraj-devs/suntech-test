@@ -9,7 +9,7 @@
 body {
     font-family: var(--font-raleway);
 }
-/* 🔹 Top Bar */
+/* Top Bar */
 .top-bar {
     /* background: #f8f9fa; */
     font-size: 14px;
@@ -25,10 +25,10 @@ body {
     padding: 5px 15px;
     font-size: 14px;
     border: 1px solid rgb(var(--color-yellow));
-    color: rgb(var(--color-yellow));
+    color: rgb(var(--color-black));
     background: transparent;
 }
-.top-bar .btn.fill-btn {
+.btn.fill-btn {
     background-color: rgb(var(--color-yellow));
     color: rgb(var(--color-white));
 }
@@ -46,6 +46,9 @@ body {
 .top-bar i {
     color: rgb(var(--color-black));
     margin-left: 10px;
+}
+button:focus:not(:focus-visible) {
+    box-shadow: 0px 0px 5px 0px rgb(var(--color-black) / 50%);
 }
 /* Section title */
 .section-title > span{
@@ -204,6 +207,9 @@ section.aboutus{
     position: relative;
     z-index: 1;
 }
+.right-section::before,
+section.testimonial::after,
+section.testimonial::before,
 .aboutImage:before {
     content: '';
     position: absolute;
@@ -249,12 +255,101 @@ section.aboutus{
 /* testimonail section */
 .treatments-content > h4{font: 600 16px/normal var(--font-raleway);margin-bottom: 0;}
 .treatments-content > span{font: 500 14px/24px var(--font-raleway);}
+section.testimonial::after,
+section.testimonial::before {
+    background: url(./media/bg_leaf-red.png);
+    background-repeat: no-repeat;
+    top: 100px;
+    left: 0;
+    transform: scale(1);
+    right: unset;
+    background-size: 270px;
+    z-index: -1;
+}
+section.testimonial::after {
+    left: unset;
+    right: 0;
+    background-size: contain;
+    width: 200px;
+    transform: rotate(180deg);
+    top: -30%;
+    background-position: top;
+}
 /* testimonail section End */
+/* Slider Section  */
+.carousel-indicators [data-bs-target] {
+    height: 20px;
+    text-indent: unset;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid rgb(var(--color-white) / 50%);
+    background-color: transparent;
+    color: rgb(var(--color-white));
+    margin: 4px 5px;
+    font: 500 14px/20px var(--font-raleway);
+}
+.carousel-indicators {
+    position: absolute;
+    bottom: 0;
+    left: unset;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    flex-direction: column;
+    top: 0%;
+    right: 15px;
+    margin: 0;
+}
+.carousel-indicators [data-bs-target].active {
+    color: rgb(var(--color-white));
+    border-color: rgb(var(--color-white));
+}
+.slider-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: rgb(var(--color-white));
+}
+.slider-inner-content {
+    max-width: 500px;
+    position: relative;
+    margin-left: 5rem;
+}
+.slider-inner-content::before {
+    content: '';
+    height: 100%;
+    width: 5rem;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid rgb(var(--color-red));
+    border-top: 1px solid rgb(var(--color-red));
+    border-top-left-radius: 50px;
+    left: -2rem;
+}
+.offer-strip > span {
+    color: rgb(var(--color-yellow));
+    font: 300 16px/20px var(--font-raleway);
+    background-color: rgb(var(--color-black) / 50%);
+    border: 1px solid rgb(var(--color-white));
+    border-radius: 50px;
+    padding: 0 9px;
+    display: inline-block;
+}
+.offer-strip {margin: -0.6rem 10px 2rem 4rem;}
+.slider-inner-content > h2 {
+    font: 700 36px/normal var(--font-raleway);
+}
+/* Slider Section End */
 /* Profile Section  */
 .profile-section {
     background-color: rgb(var(--color-red));
 }
-.left-section {position: relative;}
+section.testimonial,.left-section {position: relative;}
 .team-images {
     display: flex;
     overflow-x: auto;
@@ -313,6 +408,18 @@ section.aboutus{
     opacity: 1;
     background-color: rgb(var(--color-white));
 }
+.right-section{position: relative;}
+.right-section::before {
+    left: unset;
+    right: 100%;
+    background-size: cover;
+    width: 600px;
+    transform: rotate(0deg) scaleX(-1);
+    top: unset;
+    background-position: -175px 250px;
+    bottom: 0;
+    height: 100%;
+}
 .right-section img {
     width: 100%;
     height: 100%;
@@ -357,6 +464,11 @@ section.aboutus{
         display: none;
     }
     .image-one {margin-bottom: 2rem;}
+    .carousel-item img {
+        min-height: 90vh;
+        object-fit: cover;
+        object-position: 60%;
+    }
 }
 @media (max-width: 576px){
     .image-two, .image-three{

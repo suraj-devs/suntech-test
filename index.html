@@ -17,10 +17,8 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <!-- 🔹 Top Bar -->
+    <!-- Top Bar -->
     <div class="container-fluid top-bar text-center text-md-start border-bottom py-2">
         <div class="d-flex justify-content-between align-items-center flex-wrap">
             <div>
@@ -29,7 +27,7 @@
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
-            <div class="d-none d-md-flex gap-3">
+            <div class="d-none d-md-flex gap-3 align-items-center">
                 <a href="mailto:info@providencedental.co.uk"><i class="fas fa-envelope"></i>
                     info@providencedental.co.uk</a>
                 <a href="tel:+916023164946"><i class="fas fa-phone"></i> 602-316-4946</a>
@@ -37,21 +35,19 @@
             </div>
         </div>
     </div>
-
-    <!-- 🔹 Navbar -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
 
-            <!-- 🔹 Brand Logo in Center -->
+            <!-- Brand Logo in Center -->
             <a class="navbar-brand mx-auto d-lg-none" href="#">
                 <img src="media/logo.png" height="50" alt="Providence Dental Practice">
             </a>
 
-            <!-- 🔹 Navbar Toggler (for Mobile) -->
+            <!-- Navbar Toggler (for Mobile) -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <!-- Left Menu -->
                 <ul class="navbar-nav me-auto d-none d-lg-flex">
@@ -59,19 +55,17 @@
                     <li class="nav-item"><a class="nav-link" href="#">Fees & Plans</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Invisalign</a></li>
                 </ul>
-
                 <!-- Logo in Center (Desktop) -->
                 <a class="navbar-brand d-none d-lg-block mx-auto" href="#">
                     <img src="media/logo.png" height="50" alt="Providence Dental Practice">
                 </a>
-
                 <!-- Right Menu -->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#">Smile Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Blogs</a></li>
 
-                    <!-- 🔹 Dropdown (Dental Treatment) -->
+                    <!-- Dropdown (Dental Treatment) -->
                     <li class="nav-item dropdown">
                         <button class="btn dropdown-toggle" data-bs-toggle="dropdown">
                             Dental Treatment
@@ -89,31 +83,26 @@
     <!-- Slider  -->
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">1</button>
+            <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2">2</button> -->
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="media/main-banner.png" class="d-block w-100" alt="Main Banner" />
-            </div>
-            <div class="carousel-item">
-                <img src="media/main-banner.png" class="d-block w-100" alt="Main Banner" />
+                <div class="slider-content d-flex justify-content-between align-items-center container">
+                    <div class="slider-inner-content">
+                        <div class="offer-strip"><span>Disc 50%</span>&nbsp;Promo for dental care in March to April</div>
+                        <h2 class="mb-3">Healthy Smile<br> For The Whole Family</h2>
+                        <p class="mb-3">Our dental care membership encourages regular attendance, enabling us to spot problems before they arise and results in helping you maintain healthy teeth and gums for life.</p>
+                        <div class="action-btn">
+                            <a href="#" class="m-0 btn btn-sm fill-btn">Read more</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
     <!-- Slider End -->
-
     <!-- About Us Section  -->
     <section class="aboutus pt-5">
         <div class="container">
