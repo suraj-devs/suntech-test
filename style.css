@@ -61,12 +61,12 @@ button:focus:not(:focus-visible) {
 /* Section title end */
 /* Navbar */
 .navbar {
-    padding: 15px 0;
+    padding: 5px 0;
 }
 .navbar-nav .nav-link {
     color: var(--color-black);
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
 }
 .navbar-nav .nav-link:hover {
     color: rgb(var(--color-yellow));
@@ -325,7 +325,7 @@ section.testimonial::after {
 }
 .offer-strip {margin: -0.6rem 10px 2rem 4rem;}
 .slider-inner-content > h2 {
-    font: 700 65px/normal var(--font-raleway);
+    font: 700 40px/normal var(--font-raleway);
 }
 /* Slider Section End */
 /* Profile Section  */
@@ -412,7 +412,8 @@ section.testimonial,.left-section {position: relative;}
 /* Profile Section  */
 @media (min-width: 992px) {
     .navbar-brand.mx-auto {
-        top: -41px;
+        top: -35px;
+        left: 50px;
     }
 }
 @media (max-width: 991px) {
