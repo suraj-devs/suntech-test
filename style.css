@@ -325,7 +325,7 @@ section.testimonial::after {
 }
 .offer-strip {margin: -0.6rem 10px 2rem 4rem;}
 .slider-inner-content > h2 {
-    font: 700 36px/normal var(--font-raleway);
+    font: 700 65px/normal var(--font-raleway);
 }
 /* Slider Section End */
 /* Profile Section  */
@@ -354,7 +354,7 @@ section.testimonial,.left-section {position: relative;}
 .underline {
     height: 3px;
     background-color: rgb(var(--color-white));
-    width: 90px;
+    width: 100px;
     margin-top: 0;
     transition: transform 0.3s ease;
     border-radius: 5px;

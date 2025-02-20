@@ -80,7 +80,7 @@ function updateSlide(index) {
     nameElement.textContent = teamData[index].name;
     descriptionElement.textContent = teamData[index].description;
     mainImageElement.src = teamData[index].image;
-    underline.style.transform = `translateX(${index * 104}px)`;
+    underline.style.transform = `translateX(${index * 110}px)`;
     dots.forEach(dot => dot.classList.remove('active'));
     dots[index].classList.add('active');
     teamImages.forEach(img => img.classList.remove('active'));
