@@ -154,7 +154,6 @@ button:focus:not(:focus-visible) {
 /* About Us Section  */
 section.aboutus{
     background: rgb(var(--color-red));
-    overflow: hidden;
 }
 .aboutImage {
     position: relative;
@@ -469,6 +468,7 @@ section.testimonial,.left-section {position: relative;}
     .profile-section .content p,
     .about-details > p{font: 400 14px/26px var(--font-raleway);}
     .slider-inner-content{margin-left: 3rem;}
+    section.aboutus{overflow: hidden;}
 }
 @media (max-width: 576px){
     .image-two, .image-three{
