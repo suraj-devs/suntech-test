@@ -227,42 +227,39 @@
     </section>
     <!-- Testimonial Section End -->
     <!-- dr section -->
-    <section class="carousel-container">
+    <section class="profile-section pt-5">
         <div class="container">
-            <div class="carouselInner">
-                <div class="doctor-images">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" data-bs-target="#dentistCarousel" data-bs-slide-to="0" class="active">
-                    <img src="https://randomuser.me/api/portraits/women/45.jpg" data-bs-target="#dentistCarousel" data-bs-slide-to="1">
-                </div>
-                <div id="dentistCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#dentistCarousel" data-bs-slide-to="0" class="active"></button>
-                        <button type="button" data-bs-target="#dentistCarousel" data-bs-slide-to="1"></button>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="left-section">
+                        <div class="team-slider pb-4">
+                            <div class="team-images">
+                                <img src="media/doctor.png" alt="Team Member 1" data-index="0">
+                                <img src="media/aboutImg_one.png" alt="Team Member 2" data-index="1">
+                                <img src="media/aboutImg_two.png" alt="Team Member 3" data-index="2">
+                                <img src="media/aboutImg_three.png" alt="Team Member 4" data-index="3">
+                            </div>
+                            <div class="underline"></div>
+                        </div>
+                        <div class="content">
+                            <span class="pb-3 pt-3 d-block" id="title">Principal Dentist</span>
+                            <h3 class="pb-2" id="name">Dr. Delly Martin</h3>
+                            <p id="description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam...</p>
+                            <div class="action-btn">
+                                <a href="#" class="m-0 btn btn-sm d-inline-block btn-white" aria-label="button">Read More</a>
+                            </div>
+                            <div class="slider-dots pt-5">
+                                <span class="dot active" data-index="0"></span>
+                                <span class="dot" data-index="1"></span>
+                                <span class="dot" data-index="2"></span>
+                                <span class="dot" data-index="3"></span>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Slides -->
-                    <div class="carousel-inner">
-                        <!-- Slide 1 -->
-                        <div class="carousel-item active">
-                            <div class="carousel-text">
-                                <h2>Dr. John Smith</h2>
-                                <p>Dr. John has 15 years of experience in dental surgery and specializes in cosmetic dentistry.</p>
-                                <button class="btn-read-more">Read More</button>
-                            </div>
-                            <div class="carousel-image">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg">
-                            </div>
-                        </div>
-                        <!-- Slide 2 -->
-                        <div class="carousel-item">
-                            <div class="carousel-text">
-                                <h2>Dr. Lisa Brown</h2>
-                                <p>Dr. Lisa is an expert in Invisalign and modern orthodontic treatments.</p>
-                                <button class="btn-read-more">Read More</button>
-                            </div>
-                            <div class="carousel-image">
-                                <img src="https://randomuser.me/api/portraits/women/45.jpg">
-                            </div>
-                        </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="right-section">
+                        <img id="main-image" src="media/doctor.png" alt="Dr. Delly Martin">
                     </div>
                 </div>
             </div>

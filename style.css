@@ -128,14 +128,14 @@ body {
     transition: var(--transition);
 }
 .treatments-card:hover .treatments-figure:before {
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 20px;
     border-top: 3px solid rgb(var(--color-white));
     border-left: 3px solid rgb(var(--color-white));
 }
 .treatments-card:hover .treatments-figure:after {
-    right: 10px;
-    bottom: 10px;
+    right: 20px;
+    bottom: 20px;
     border-right: 3px solid rgb(var(--color-white));
     border-bottom: 3px solid rgb(var(--color-white));
 }
@@ -251,85 +251,73 @@ section.aboutus{
 .treatments-content > span{font: 500 14px/24px var(--font-raleway);}
 /* testimonail section End */
 /* Profile Section  */
-.carousel-container {
-    background: #a9473c;
-    color: white;
-    /* padding: 40px; */
-    /* border-radius: 10px; */
-    /* text-align: center; */
-    /* position: relative; */
-    /* max-width: 900px; */
+.profile-section {
+    background-color: rgb(var(--color-red));
 }
-
-.doctor-images {
+.left-section {position: relative;}
+.team-images {
     display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 10px;
 }
-
-.doctor-images img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.team-images img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
     cursor: pointer;
-    border: 3px solid transparent;
-    transition: 0.3s;
-    margin: 0 10px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
 }
-
-.doctor-images img.active {
-    border: 3px solid white;
-    box-shadow: 0px 0px 10px white;
+.team-images img.active {
+    border-color: rgb(var(--color-white)); /* Highlight color */
 }
-
-.carousel-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
+.underline {
+    height: 3px;
+    background-color: rgb(var(--color-white));
+    width: 90px;
+    margin-top: 0;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
 }
-.carousel-item.active {
-    opacity: 1;
-}
-
-.carousel-text {
-    flex: 1;
-    padding: 20px;
-}
-
-.carousel-text h2 {
-    font-size: 24px;
+.profile-section .content span,.profile-section .content h3,.profile-section .content p {
+    font: 500 17px/normal var(--font-raleway);
+    color: rgb(var(--color-white));
     margin-bottom: 10px;
-}
 
-.carousel-text p {
-    font-size: 16px;
 }
-
-.carousel-image img {
-    width: 300px;
-    border-radius: 10px;
+.profile-section .content span {font-size: 17px;}
+.profile-section .content h3 { font-size: 45px;}
+.profile-section .content p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    max-width: 500px;
+    line-height: 24px;
 }
-
-.carousel-indicators button {
-    width: 10px;
-    height: 10px;
+.profile-section .slider-dots {
+    display: flex;
+    gap: 5px;
+}
+.profile-section  .dot {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background-color: white;
+    background-color: rgb(var(--color-black) / 50%);
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
 }
-
-.btn-read-more {
-    background: none;
-    border: 1px solid white;
-    padding: 8px 15px;
-    color: white;
-    border-radius: 20px;
-    transition: 0.3s;
+.profile-section  .dot.active {
+    opacity: 1;
+    background-color: rgb(var(--color-white));
 }
-
-.btn-read-more:hover {
-    background: white;
-    color: #a9473c;
+.right-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px; /* Rounded corners */
 }
 /* Profile Section  */
 @media (max-width: 991px) {
