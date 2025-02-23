@@ -48,57 +48,47 @@ const nameElement = document.getElementById('name');
 const descriptionElement = document.getElementById('description');
 const mainImageElement = document.getElementById('main-image');
 const dots = document.querySelectorAll('.slider-dots .dot');
-const teamData = [
-    {
-        title: 'Principal Dentist',
-        name: 'Dr. Delly Martin',
-        description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur',
-        image: 'media/doctor.png'
-    },
-    {
-        title: 'Assistant Dentist',
-        name: 'Dr. Jane Smith',
-        description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur',
-        image: 'media/aboutImg_one.png'
-    },
-    {
-        title: 'Assistant Dentist',
-        name: 'Dr. Jane Smith',
-        description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur',
-        image: 'media/aboutImg_two.png'
-    },
-    {
-        title: 'Assistant Dentist',
-        name: 'Dr. Jane Smith',
-        description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur',
-        image: 'media/aboutImg_three.png'
-    }
-];
+
 let currentIndex = 0;
+
 function updateSlide(index) {
-    titleElement.textContent = teamData[index].title;
-    nameElement.textContent = teamData[index].name;
-    descriptionElement.textContent = teamData[index].description;
-    mainImageElement.src = teamData[index].image;
+    const selectedImage = teamImages[index];
+
+    titleElement.textContent = selectedImage.title;
+    
+    // alt se name extract karna (title ke saath)
+    const altText = selectedImage.alt.split(" - ");
+    if (altText.length > 1) {
+        nameElement.textContent = altText[1]; // "Dr. Delly Martin"
+    } else {
+        nameElement.textContent = altText[0]; // Backup
+    }
+
+    descriptionElement.textContent = selectedImage.getAttribute('aria-label');
+    mainImageElement.src = selectedImage.src;
+
     underline.style.transform = `translateX(${index * 110}px)`;
     dots.forEach(dot => dot.classList.remove('active'));
     dots[index].classList.add('active');
     teamImages.forEach(img => img.classList.remove('active'));
     teamImages[index].classList.add('active');
 }
+
 function nextSlide() {
-    currentIndex = (currentIndex + 1) % teamData.length;
+    currentIndex = (currentIndex + 1) % teamImages.length;
     updateSlide(currentIndex);
 }
 
 setInterval(nextSlide, 3000);
 updateSlide(currentIndex);
+
 teamImages.forEach((image, index) => {
     image.addEventListener('click', () => {
         currentIndex = index;
         updateSlide(currentIndex);
     });
 });
+
 dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
         currentIndex = index;
