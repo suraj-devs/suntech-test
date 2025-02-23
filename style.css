@@ -447,9 +447,22 @@ section.testimonial,.left-section {position: relative;}
     border-radius: 10px; /* Rounded corners */
 }
 /* Profile Section  */
+@media (max-width: 1440px){
+    :root{
+        --font-16-34: 13px/32px;
+        --font-18-32: 15px/28px;
+    }
+    .navbar-brand img{
+        height: 40px;
+    }
+    .navbar-brand.mx-auto {
+        top: -40px;
+        left: 50px;
+    }
+}
 @media (min-width: 992px) {
     .navbar-brand.mx-auto {
-        top: -50px;
+        top: -40px;
         left: 50px;
     }
 }
