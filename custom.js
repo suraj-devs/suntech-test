@@ -95,3 +95,4 @@ dots.forEach((dot, index) => {
         updateSlide(currentIndex);
     });
 });
+AOS.init();
