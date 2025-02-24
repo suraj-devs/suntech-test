@@ -474,7 +474,8 @@ section.testimonial,.left-section {position: relative;}
         --font-16-34: 12px/28px;
         --font-18-32: 14px/26px;
     }
-    .navbar-brand img{height: 30px;}
+    .navbar-brand img{height: 40px;}
+    .topBar_right span {font-size: 12px}
     .navbar-brand.mx-auto {top: -40px;left: 50px;}
     .gap-3 {gap: 0px !important}
     .slider-inner-content{max-width: 50%;}
